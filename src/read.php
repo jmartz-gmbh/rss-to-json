@@ -11,7 +11,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
 // $output contains the output string
 $output = curl_exec($ch);
-$xml = simplexml_load_string($output);
+$xml = simplexml_load_string($output,"SimpleXMLElement", LIBXML_NOCDATA);
 $json = json_encode($xml);
 echo $json;
 
